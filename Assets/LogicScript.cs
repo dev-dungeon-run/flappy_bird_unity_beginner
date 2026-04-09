@@ -7,6 +7,7 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverPanel;
+    public GameObject quitButton;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd = 1)
@@ -23,5 +24,10 @@ public class LogicScript : MonoBehaviour
     public void gameOver() 
     {
         gameOverPanel.SetActive(true);
+    }
+
+    public void exit()
+    {
+        Application.Quit();
     }
 }
