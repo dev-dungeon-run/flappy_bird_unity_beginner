@@ -1,15 +1,27 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
     public Text scoreText;
+    public GameObject gameOverPanel;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd = 1)
     {
         playerScore = playerScore + scoreToAdd;
         scoreText.text = playerScore.ToString();
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void gameOver() 
+    {
+        gameOverPanel.SetActive(true);
     }
 }
